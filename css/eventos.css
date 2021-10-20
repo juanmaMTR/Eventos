@@ -5,3 +5,10 @@ img{
   margin: auto;
   display: block;
 }
+.seta{
+  height: 50px;
+  position: absolute;
+  left: 300px;
+  top: 100px;
+
+}
