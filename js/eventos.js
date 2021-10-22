@@ -10,7 +10,8 @@ function iniciar(){
   //img.addEventListener('click',manejadorClick)
   //img.addEventListener('click',manejadorClick2)
   mapa.onclick=ponerSeta
-
+  //mapa.oncontextmenu=eliminarSeta
+  //mapa.addEventListener('contextmenu',eliminarSeta)
 }
 
 /*
@@ -27,6 +28,7 @@ function ponerSeta(evento){
   let seta=document.createElement('img')
   seta.setAttribute('src','img/seta.png')
   seta.classList.add('seta')
+  seta.oncontextmenu=eliminarSeta
   seta.style.top=`${evento.clientY -25}px`
   seta.style.left=`${evento.clientX -25}px`
   document.body.appendChild(seta)
@@ -34,4 +36,8 @@ function ponerSeta(evento){
 }
 function eliminarSeta(evento){
   console.log(evento);
+  evento.stopPropagation()
+  evento.preventDefault()
+  evento.target.remove()
+
 }
